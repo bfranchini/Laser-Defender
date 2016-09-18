@@ -44,7 +44,7 @@ public class PlayerShip : MonoBehaviour
 		var laser = Instantiate(Laser, transform.position, Quaternion.identity) as GameObject;
 		laser.GetComponent<Rigidbody2D>().velocity = new Vector3(0, LaserSpeed, 0);		
 		
-		AudioSource.PlayClipAtPoint(LaserSfx, transform.position);		
+		AudioSource.PlayClipAtPoint(LaserSfx, Camera.main.transform.position);		
 	}
 	
 	private void moveShip()

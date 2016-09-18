@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
 		if(health <= 0)
 		{ 
 			scoreKeeper.Score(scoreValue);
-			AudioSource.PlayClipAtPoint(ExplodeSfx, transform.position);
+			AudioSource.PlayClipAtPoint(ExplodeSfx, Camera.main.transform.position);
 			Destroy(gameObject);
 		}
 			
@@ -49,6 +49,6 @@ public class EnemyController : MonoBehaviour
 	{		
 		var laser = Instantiate(Laser, transform.position, Quaternion.identity) as GameObject;
 		laser.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -LaserSpeed, 0);		
-		AudioSource.PlayClipAtPoint(LaserSfx, transform.position);
+		AudioSource.PlayClipAtPoint(LaserSfx, Camera.main.transform.position);
 	}		
 }
